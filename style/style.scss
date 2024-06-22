@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Work Sans";
+    font-style: italic;
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 8px;
+}
+
+html {
+    font-size: 8px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.clock {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: flex-end; /* 바늘들을 하단에 정렬 */
+    justify-content: center;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    transform-origin: bottom center; /* 변형의 기준점을 하단 중앙으로 설정 */
+    bottom: 0; /* 요소를 하단에 배치 */
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.point {
+    top: 0%;
+    transform: translate(-5px, 15px);
+    margin-left: 10px;
+    z-index: 10;
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.script-gear {
+    display: none; /* 숨기기 */
+}
+
+.script {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* 요소들을 양 끝으로 정렬 */
+    align-items: center; /* 요소들을 수직 가운데 정렬 */
+    padding-bottom: 10px;
+    padding-top: 4px;
+}
+
+.script h1 {
+    margin: 0; /* 필요에 따라 여백 조정 */
+    padding-left: 5vw; /* 필요에 따라 패딩 조정 */
+    .title {
+        font-weight: 700;
+    }
+}
+
+.setting {
+    position: fixed;
+    bottom: 0px;
+    left: 70%; /* 화면의 전체 너비에서 70% 위치에 배치 */
+    transform: translateX(-50%); /* 요소의 중심을 정확하게 맞추기 위해 이동 */
+    padding: 10px; /* 필요에 따라 패딩 조정 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.setting h1 {
+    margin: 0;
+    padding: 2px;
+}
+
+.click-image {
+    width: 12vw;
+}
+.clock-image {
+    width: 13.4vw;
+}
+.title-image {
+    padding: 5px 20px 7px;
+    display: flex;
+    justify-content: space-between; // 이미지를 왼쪽 끝과 오른쪽 끝에 배치합니다.
+    align-items: center; // 이미지를 수직으로 가운데 정렬합니다.
+}
+
+.gear {
+    top: 25px;
+    .small-c {
+        position: absolute;
+        //width: 152px;
+        //height: 152px;
+        //border: 0.5px solid black;
+        margin-left: 0px;
+        border-radius: 50%;
+        background-color: transparent;
+        z-index: 1;
+    }
+    .big-c {
+        left: -420px;
+        position: absolute;
+        rotate: 180deg;
+        width: 1646px;
+        //height: 1646px;
+        //border: 0.5px solid rgb(0, 0, 0);
+        border-radius: 50%;
+        background-color: transparent;
+        z-index: 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .step1 {
+        //margin-left: 11%;
+        margin-left: 165px; /* 좌측에서 135px 떨어진 위치에 배치 */
+        padding-top: 5px;
+    }
+
+    .step2 {
+        //margin-left: 14%;
+        margin-left: 183px; /* 좌측에서 135px 떨어진 위치에 배치 */
+    }
+
+    .step3 {
+        //margin-left: 16%;
+        margin-left: 195px; /* 좌측에서 135px 떨어진 위치에 배치 */
+    }
+
+    .step4 {
+        //margin-left: 17%;
+        margin-left: 203px; /* 좌측에서 135px 떨어진 위치에 배치 */
+    }
+}
+
+#click-indicator {
+    position: absolute;
+    display: none;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: yellow;
+    padding: 5px;
+    padding-right: 7px;
+    border: 1px solid black;
+    z-index: 1000;
+
+    &.show {
+        display: block;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#small-gear {
+    animation: spin 20s linear infinite;
+}
+
+#big-gear {
+    animation: spin 40s linear infinite;
+}
+
+.gear .circle .small-c {
+    position: absolute;
+    z-index: -1; /* 모든 레이어의 맨 아래에 위치하도록 설정 */
+}
+.gear .circle .big-c {
+    position: absolute;
+    z-index: -2;
+}
+
+.fast-shadow {
+    color: black; /* Text color is transparent to show only the shadow */
+    text-shadow: 0 0 3px black; /* Adjust the blur radius as needed */
+    animation: blink 1s infinite; /* Blink animation */
+}
+.slow-shadow {
+    color: black; /* Text color is transparent to show only the shadow */
+    text-shadow: 0 0 3px black; /* Adjust the blur radius as needed */
+    animation: blink 6s infinite; /* Blink animation */
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

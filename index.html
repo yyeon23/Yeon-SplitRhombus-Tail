@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoreMoreMore</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Oi&family=Rubik+Puddles&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <template id="clock-template">
+        <section class="clock">
+            <div class="point">
+                <img src="/asset/point.svg" alt="시계의 중심점"/>
+            </div>
+            <div class="hour-hand">
+                <img id="hour-hand" src="/asset/hour-hand.svg" alt="시침"/>
+            </div>
+            <div class="minute-hand">
+                <img id="minute-hand" src="/asset/minute-hand.svg" alt="분침"/>
+            </div>
+            <div class="second-hand">
+                <img id="second-hand" src="/asset/second-hand.svg" alt="초침"/>
+            </div>
+        </section>
+    </template>
+    
+    <div id="click-indicator">CLICK</div>
+        <div class="title-image">
+            <img class="click-image" src="/asset/title-click.svg" alt="Click"/>
+            <img class="clock-image" src="/asset/title-clock.svg" alt="Clock"/>
+        </div>
+        <div class="script">
+            <h1>CONTROL YOUR TIME</h1>
+            <h1 class="title">MORE &rarr; MORE &rarr; MORE</h1>
+        </div>
+
+    <div class="script-gear">
+        <div class="gear">
+            <div class="circle">
+                <div class="small-c">
+                    <img id="small-gear" src="/asset/small_gear.png" alt="작은 톱니 바퀴"/>
+                </div>
+                <div class="big-c">
+                    <img id="big-gear" src="/asset/big_gear.png" alt="큰 톱니 바퀴"/>
+                </div>
+            </div>
+            <h2 class="step1">1. You can create a clock by clicking.</h2>
+            <h2 class="step2">2. When you create a new clock, the previous one will stop rotating.</h2>
+            <h2 class="step3">3. Create new clocks whenever you want. However, if you create a clock in a <span class="fast-shadow">hurry</span>, it will reflect that urgency, and &darr;</h2>
+            <h2 class="step4">4. if you create a clock <span class="slow-shadow">leisurely</span>, it will reflect that pace as well.</h2>
+
+            <div id="speed-indicator"></div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <h1>RESET THE CLOCK</h1>
+        <h1 id="toggle-view">HOW IT WORKS</h1>
+    </div>
+    
+    <script src="/js/index.js"></script>
+</body>
+</html>
