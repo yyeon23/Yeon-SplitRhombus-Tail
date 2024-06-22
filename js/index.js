@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const resetButton = document.querySelector(".setting h1:first-child");
 
     resetButton.addEventListener("click", function() {
-        window.location.href = "/"; // 이동하고자 하는 초기 페이지 URL로 변경
+        window.location.href = "index.html"; // 이동하고자 하는 초기 페이지 URL로 변경
     });
 });
 
